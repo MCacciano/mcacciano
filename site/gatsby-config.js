@@ -37,8 +37,17 @@ module.exports = {
         token: process.env.SANITY_TOKEN,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: "gatsby-plugin-prefetch-google-fonts",
+      options: {
+        fonts: [
+          {
+            family: "Roboto",
+            variants: ["100", "300", "400", "700", "900"],
+          },
+        ],
+      },
+    },
   ],
 }
