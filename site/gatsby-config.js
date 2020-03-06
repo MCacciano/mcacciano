@@ -46,6 +46,10 @@ module.exports = {
             family: "Roboto",
             variants: ["100", "300", "400", "700", "900"],
           },
+          {
+            family: "Rubik",
+            variants: ["100", "300", "400", "700", "900"],
+          },
         ],
       },
     },
