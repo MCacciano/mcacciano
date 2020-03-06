@@ -7,30 +7,53 @@ export const Nav = styled.nav`
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 2;
+  height: 5vh;
+  line-height: 5vh;
 
   background: rgba(21, 122, 180, 0.8);
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
 
   div {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    height: 100%;
     max-width: 1200px;
-    /* padding: 20px 50px; */
 
     @media screen and (max-width: 660px) {
       padding: 20px;
     }
   }
+
+  .active {
+    background: rgba(0, 0, 0, 0.3) !important;
+  }
 `
 
 export const GLink = styled(animated(Link))`
   display: block;
-  padding: 15px 20px;
   color: #f7f7f7;
+  height: 100%;
+  padding: 0 1.25rem;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
 
   &:active {
     color: #f7f7f7;
@@ -51,11 +74,13 @@ export const Ul = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
+  height: 100%;
 `
 
 export const Li = styled.li`
   text-transform: uppercase;
   letter-spacing: 1px;
+  height: 100%;
 
   @media screen and (max-width: 660px) {
     &:not(:last-child) {

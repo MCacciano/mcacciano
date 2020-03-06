@@ -16,7 +16,7 @@ export const HeroContainer = styled.div`
   align-items: center;
 
   width: 100%;
-  height: 93vh;
+  height: 95vh;
   background: url(./hero-2.jpg);
   background-size: cover;
   background-position: top;
@@ -85,7 +85,6 @@ export const HeroCopy = styled.p`
   padding: 30px;
   margin-left: 50px;
   line-height: 1.1;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
 
   #hr {
@@ -127,7 +126,7 @@ export const Span = styled.span`
     height: 40%;
     background: rgba(21, 122, 180, 0.8);
     opacity: 0.7;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     z-index: -1;
     max-width: 0;
     animation: ${growRight} ease-in 1s forwards;
