@@ -21,19 +21,13 @@ const Hero = () => {
   return (
     <HeroContainer>
       <HeroCopy>
-        <Span isLarge={true} fontSize="4">
-          Front{" "}
-        </Span>
-        <Span isLarge={true} fontSize="4">
-          End{" "}
-        </Span>
-        <Span isLarge={true} fontSize="4">
-          Developer{" "}
-        </Span>
+        <Span fontSize={4}>Front </Span>
+        <Span fontSize={4}>End </Span>
+        <Span fontSize={4}>Developer </Span>
         <span id="hr" />
-        with a <Span fontSize="2.75">passion </Span>
-        for creating <Span fontSize="2.75">cool </Span>
-        and <Span fontSize="2.75">simplistic </Span>
+        with a <Span fontSize={2.75}>passion </Span>
+        for creating <Span fontSize={2.75}>cool </Span>
+        and <Span fontSize={2.75}>simplistic </Span>
         things on the web
       </HeroCopy>
       {/* <SocialList>

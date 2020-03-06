@@ -81,11 +81,12 @@ export const HeroCopy = styled.p`
   background: #f7f7f7;
   text-align: left;
   z-index: 2;
-  width: 100%;
-  max-width: 680px;
+  max-width: 660px;
   padding: 30px;
   margin-left: 50px;
   line-height: 1.1;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
 
   #hr {
     display: block;
@@ -95,8 +96,10 @@ export const HeroCopy = styled.p`
     margin: 1rem auto 0.5rem;
   }
 
-  @media screen and (max-width: 990px) {
-    font-size: 2rem;
+  @media screen and (max-width: 760px) {
+    margin: 0 25px;
+    text-align: center;
+    font-size: 2.25rem;
   }
 `
 
@@ -106,6 +109,14 @@ export const Span = styled.span`
   vertical-align: bottom;
   position: relative;
   font-weight: 300;
+
+  @media screen and (max-width: 701px) {
+    font-size: ${({ fontSize }) => `${fontSize - 0.5}rem`};
+  }
+
+  @media screen and (max-width: 701px) {
+    font-size: ${({ fontSize }) => `${fontSize - 1}rem`};
+  }
 
   &:after {
     content: "";
@@ -120,13 +131,5 @@ export const Span = styled.span`
     z-index: -1;
     max-width: 0;
     animation: ${growRight} ease-in 1s forwards;
-  }
-
-  @media screen and (max-width: 1100px) {
-    font-size: ${({ isLarge }) => (isLarge ? "3.25rem" : "2.75rem")};
-  }
-
-  @media screen and (max-width: 990px) {
-    font-size: ${({ isLarge }) => (isLarge ? "2.75rem" : "2rem")};
   }
 `
