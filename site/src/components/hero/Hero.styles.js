@@ -146,6 +146,10 @@ export const HeroCopy = styled.div`
         display: block;
         height: 100%;
         padding: 1rem;
+
+        &:hover i {
+          color: #3282b8;
+        }
       }
     }
   }
@@ -172,8 +176,8 @@ export const Span = styled.span`
     left: ${({ left }) => (left ? `${left}` : "0")};
     width: ${({ hWidth }) => (hWidth ? `${hWidth}%` : "0")};
     height: 30%;
-    background: #3282b8;
-    opacity: 0.4;
+    background: #bbe1fa;
+    opacity: 0.65;
     z-index: -1;
     max-width: 0;
     animation: ${growRight} ease-in 1s forwards;

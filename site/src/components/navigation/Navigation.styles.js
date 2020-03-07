@@ -20,7 +20,6 @@ export const Nav = styled.nav`
     line-height: 55px;
   }
 
-  background: #1b262c;
   background: #0f4c75;
 
   div {
