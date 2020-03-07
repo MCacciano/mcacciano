@@ -1,9 +1,9 @@
-import React from "react"
+import React from 'react'
 
-import { useStaticQuery, graphql } from "gatsby"
-import BackgroundImage from "gatsby-background-image"
+import { useStaticQuery, graphql } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
 
-import { Projects } from "./ProjectList.styles"
+import { Projects } from './ProjectList.styles'
 
 export default () => {
   const data = useStaticQuery(graphql`

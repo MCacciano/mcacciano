@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react'
 
-import { useStaticQuery, graphql } from "gatsby"
-import BackgroundImage from "gatsby-background-image"
+import { useStaticQuery, graphql } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
 
 const BackgroundImg = ({
   children,
@@ -27,9 +27,9 @@ const BackgroundImg = ({
   return (
     <BackgroundImage
       className={className}
-      tag={tag || "div"}
+      tag={tag || 'div'}
       fluid={imageData || defaultImg}
-      backgroundColor={backgroundColor || "#1b262c"}
+      backgroundColor={backgroundColor || ''}
     >
       {children}
     </BackgroundImage>
