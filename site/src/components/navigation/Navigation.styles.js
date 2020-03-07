@@ -60,7 +60,8 @@ export const Logo = styled.h1`
   letter-spacing: 1px;
   font-weight: 700;
 
-  @media screen and (max-width: 336px) {
+  /* @media screen and (max-width: 336px) { */
+  @media screen and (max-width: 535px) {
     display: none;
   }
 `
@@ -70,6 +71,11 @@ export const Ul = styled.ul`
   align-items: center;
   list-style: none;
   height: 100%;
+
+  @media screen and (max-width: 535px) {
+    width: 100%;
+    justify-content: center;
+  }
 
   @media screen and (max-width: 336px) {
     width: 100%;
@@ -82,7 +88,12 @@ export const Li = styled.li`
   letter-spacing: 1px;
   height: 100%;
 
-  @media screen and (max-width: 660px) {
+  /* this will be changed when mobile nav is done */
+  &:last-child {
+    display: none;
+  }
+
+  /* @media screen and (max-width: 660px) {
     &:last-child {
       margin-right: 25px;
     }
@@ -90,7 +101,7 @@ export const Li = styled.li`
     &:not(:last-child) {
       display: none;
     }
-  }
+  } */
 `
 
 export const BurgerMenu = styled.i`
