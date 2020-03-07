@@ -70,7 +70,7 @@ const Hero = () => {
           </div>
         </HeroCopy>
       </HeroCopyWrapper>
-      <HeroImage />
+      {/* <HeroImage /> */}
       {/* <HeroCopy>
         <h1>
           <Span hWidth={97} left="4px">

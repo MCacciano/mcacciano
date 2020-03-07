@@ -15,6 +15,7 @@ export const Nav = styled.nav`
   height: 8vh;
   line-height: 8vh;
 
+  background: #1b262c;
   background: #0f4c75;
 
   &:after {
