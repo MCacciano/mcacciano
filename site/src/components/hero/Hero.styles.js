@@ -28,9 +28,13 @@ export const HeroCopyWrapper = styled.div`
 
   background: url(./hero-2.jpg);
   background-size: cover;
-  background-position: right;
+  background-position: left;
 
-  @media screen and (max-width: 684px) {
+  @media screen and (max-width: 1080px) {
+    background-position: bottom;
+  }
+
+  @media screen and (max-width: 880px) {
     background: url(./mobile-hero-2.jpg);
     background-size: cover;
     background-position: right;
@@ -64,8 +68,13 @@ export const HeroCopy = styled.div`
     grid-template-columns: 1fr;
   }
 
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 880px) {
     height: auto;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 812px) and (orientation: landscape) {
+    width: 100vw;
   }
 
   h1 {

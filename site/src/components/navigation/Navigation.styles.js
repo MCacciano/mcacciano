@@ -15,19 +15,13 @@ export const Nav = styled.nav`
   height: 8vh;
   line-height: 8vh;
 
+  @media screen and (orientation: landscape) {
+    height: 55px;
+    line-height: 55px;
+  }
+
   background: #1b262c;
   background: #0f4c75;
-
-  &:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
 
   div {
     display: flex;
@@ -90,6 +84,10 @@ export const Li = styled.li`
   height: 100%;
 
   @media screen and (max-width: 660px) {
+    &:last-child {
+      margin-right: 25px;
+    }
+
     &:not(:last-child) {
       display: none;
     }
@@ -99,8 +97,7 @@ export const Li = styled.li`
 export const BurgerMenu = styled.i`
   color: rgba(26, 23, 23, 1);
   cursor: pointer;
-  margin-right: 25px;
-  line-height: 1.5;
+  line-height: 1.6;
 
   display: none;
 
