@@ -1,5 +1,7 @@
 import styled, { keyframes } from "styled-components"
 
+import BackgroundImg from "../background-img/BackgroundImg"
+
 const growRight = keyframes`
   from {
     max-width: 0;
@@ -10,7 +12,7 @@ const growRight = keyframes`
   }
 `
 
-export const HeroWrapper = styled.div`
+export const HeroWrapper = styled(BackgroundImg)`
   display: flex;
 
   height: 92vh;
@@ -19,26 +21,14 @@ export const HeroWrapper = styled.div`
     color: #0f4c75;
     color: #1b262c;
   }
+
+  background-position: top center;
 `
 
 export const HeroCopyWrapper = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-
-  background: url(./hero-2.jpg);
-  background-size: cover;
-  background-position: left;
-
-  @media screen and (max-width: 1080px) {
-    background-position: bottom;
-  }
-
-  @media screen and (max-width: 880px) {
-    background: url(./mobile-hero-2.jpg);
-    background-size: cover;
-    background-position: right;
-  }
 
   &:after {
     content: "";

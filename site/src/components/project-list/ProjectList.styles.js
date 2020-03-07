@@ -18,12 +18,12 @@ export const Projects = styled.ul`
     margin: 1rem;
     position: relative;
 
-    background: url(./blog-tile.jpg);
+    /* background: url(./blog-tile.jpg);
     background-size: cover;
-    background-position: top;
+    background-position: top; */
     z-index: -1;
 
-    &:after {
+    /* &:after {
       content: "";
       display: block;
       width: 100%;
@@ -33,7 +33,7 @@ export const Projects = styled.ul`
       top: 0;
       left: 0;
       z-index: -1;
-    }
+    } */
 
     a {
       display: block;

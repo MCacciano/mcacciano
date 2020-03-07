@@ -1,17 +1,25 @@
 import React from "react"
 
+import { useStaticQuery, graphql } from "gatsby"
+
 // styled components
-import {
-  HeroWrapper,
-  HeroCopyWrapper,
-  HeroCopy,
-  Span,
-  // SocialList,
-  // SocialListItem,
-  // SocialLink,
-} from "./Hero.styles"
+import { HeroWrapper, HeroCopyWrapper, HeroCopy, Span } from "./Hero.styles"
 
 const Hero = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      desktop: file(relativePath: { eq: "hero-2.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
+
+  const imageData = data.desktop.childImageSharp.fluid
+
   const SOCIAL_LINKS = [
     { icon: "github", href: "https://www.github.com/mcacciano" },
     { icon: "twitter", href: "https://www.twitter.com/king_kooka" },
@@ -19,7 +27,7 @@ const Hero = () => {
   ]
 
   return (
-    <HeroWrapper>
+    <HeroWrapper imageData={imageData}>
       <HeroCopyWrapper>
         <HeroCopy>
           <ul>
@@ -59,16 +67,6 @@ const Hero = () => {
           </div>
         </HeroCopy>
       </HeroCopyWrapper>
-
-      {/* <SocialList>
-        {SOCIAL_LINKS.map(({ name, url }) => (
-          <SocialListItem key={name}>
-            <SocialLink href={url} target="_blank">
-              <i className={`fab fa-${name} fa-2x ${name}`} />
-            </SocialLink>
-          </SocialListItem>
-        ))}
-      </SocialList> */}
     </HeroWrapper>
   )
 }
