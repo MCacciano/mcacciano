@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -13,6 +13,10 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1.4;
     font-family: Roboto, Arial, Helvetica, sans-serif;
     color: #171717;
+  }
+
+  main {
+    height: 92vh;
   }
 
   ul {

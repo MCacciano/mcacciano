@@ -3,7 +3,7 @@ import React from "react"
 
 import { graphql } from "gatsby"
 
-import MainLayout from "../components/main-layout/MainLayout"
+import MainLayout from "../../components/main-layout/MainLayout"
 
 export default ({ data }) => {
   const posts = data.allSanityBlogPost.nodes.map(post => {

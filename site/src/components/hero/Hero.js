@@ -25,7 +25,7 @@ const Hero = () => {
           <ul>
             {SOCIAL_LINKS.map(({ icon, href }) => (
               <li>
-                <a href={href} className={icon}>
+                <a href={href} className={icon} target="_blank">
                   <i className={`fab fa-${icon} fa-2x`} />
                 </a>
               </li>

@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 
-import MainLayout from '../components/main-layout/MainLayout'
+import MainLayout from "../../components/main-layout/MainLayout"
 
 export default () => {
   return (
