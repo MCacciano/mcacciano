@@ -16,140 +16,110 @@ export const HeroWrapper = styled(BackgroundImg)`
   display: flex;
 
   height: 92vh;
-  width: 100%;
+  width: 100vw;
+
+  background-position: bottom right;
 
   * {
-    color: #0f4c75;
     color: #1b262c;
   }
-
-  background-position: top center;
 `
 
 export const HeroCopyWrapper = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
+  background: #f7f7f7;
+
+  flex: 0 1 60%;
+
+  @media screen and (max-width: 900px) {
+    background: transparent;
+    flex: 1;
+  }
 
   &:after {
     content: '';
     display: block;
-    width: 100%;
+    width: 40%;
     height: 100%;
     position: absolute;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.3);
     top: 0;
-    left: 0;
+    right: 0;
+
+    @media screen and (max-width: 900px) {
+      width: 100%;
+    }
   }
 `
 
 export const HeroCopy = styled.div`
-  display: grid;
-  grid-template-columns: 10% 90%;
-  align-content: center;
+  display: flex;
+  justify-content: flex-end;
 
-  line-height: 1.1;
-  padding: 1rem;
-  height: 100%;
-  background: #f7f7f7;
+  width: 100%;
+  color: #1b262c;
+  padding: 25px;
+  line-height: 1;
   z-index: 1;
-  white-space: nowrap;
 
-  @media screen and (max-width: 990px) {
-    grid-template-columns: 1fr;
+  @media screen and (max-width: 900px) {
+    background: #f7f7f7;
   }
 
-  @media screen and (max-width: 880px) {
-    height: auto;
-    width: 100%;
-  }
-
-  @media screen and (max-width: 812px) and (orientation: landscape) {
-    width: 100vw;
+  @media screen and (max-width: 630px) {
+    flex-direction: column-reverse;
   }
 
   h1 {
-    font-size: 4.5rem;
+    font-size: 5rem;
     font-weight: 900;
-    font-family: 'Rubik';
 
-    @media screen and (max-width: 1140px) {
-      font-size: 3.75rem;
-    }
-
-    @media screen and (max-width: 640px) {
-      white-space: normal;
-      word-break: break-word;
-    }
-
-    @media screen and (max-width: 550px) {
+    @media screen and (max-width: 1260px) {
       font-size: 3.25rem;
     }
   }
-
   h2 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 400;
-    font-family: 'Rubik';
 
-    @media screen and (max-width: 1140px) {
+    @media screen and (max-width: 1260px) {
       font-size: 2.25rem;
     }
-
-    @media screen and (max-width: 550px) {
-      font-size: 2rem;
-    }
   }
-
   h3 {
     font-size: 2.5rem;
     font-weight: 100;
-    margin-top: 1rem;
+    margin-top: 1.25rem;
 
-    max-width: 620px;
-    white-space: normal;
-    word-break: break-word;
+    /* helps with text wrapping style */
+    max-width: 795px;
 
-    @media screen and (max-width: 1140px) {
+    @media screen and (max-width: 1260px) {
       font-size: 1.75rem;
       max-width: 565px;
     }
-
-    @media screen and (max-width: 550px) {
-      font-size: 1.5rem;
-    }
   }
+`
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 1rem 0;
+export const SocialList = styled.ul`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  margin-right: 1rem;
 
-    @media screen and (max-width: 990px) {
-      flex-direction: row;
-      grid-row: 2;
-    }
-
-    li {
-      a {
-        display: block;
-        height: 100%;
-        padding: 1rem;
-
-        &:hover i {
-          color: #3282b8;
-        }
-      }
-    }
+  @media screen and (max-width: 630px) {
+    flex-direction: row;
   }
+`
 
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem;
+export const SocialListItem = styled.li`
+  margin-top: 0.9rem;
+
+  @media screen and (max-width: 630px) {
+    &:not(:first-child) {
+      margin-left: 1.25rem;
+    }
   }
 `
 

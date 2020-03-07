@@ -3,7 +3,14 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 // styled components
-import { HeroWrapper, HeroCopyWrapper, HeroCopy, Span } from './Hero.styles'
+import {
+  HeroWrapper,
+  HeroCopyWrapper,
+  HeroCopy,
+  Span,
+  SocialList,
+  SocialListItem,
+} from './Hero.styles'
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -28,21 +35,21 @@ const Hero = () => {
 
   return (
     <HeroWrapper imageData={imageData}>
-      {/* <HeroCopyWrapper> */}
-      {/* <HeroCopy>
-          <ul>
+      <HeroCopyWrapper>
+        <HeroCopy>
+          <SocialList>
             {SOCIAL_LINKS.map(({ icon, href }) => (
-              <li>
+              <SocialListItem key={icon}>
                 <a href={href} className={icon} target="_blank">
                   <i className={`fab fa-${icon} fa-2x`} />
                 </a>
-              </li>
+              </SocialListItem>
             ))}
-          </ul>
+          </SocialList>
           <div>
             <h1>
               <Span hWidth={97} left="4px">
-                Michael Cacciano{" "}
+                Michael Cacciano{' '}
               </Span>
             </h1>
             <h2>
@@ -52,21 +59,21 @@ const Hero = () => {
             </h2>
             <h3>
               <Span fontWeight={300} hWidth={89} left="3px">
-                Passion{" "}
+                Passion{' '}
               </Span>
-              for creating{" "}
+              for creating{' '}
               <Span fontWeight={300} hWidth={90} left="2px">
-                simplistic{" "}
+                simplistic{' '}
               </Span>
-              and{" "}
+              and{' '}
               <Span fontWeight={300} hWidth={92} left="2px">
-                engaging{" "}
+                engaging{' '}
               </Span>
               experiences on the web
             </h3>
           </div>
-        </HeroCopy> */}
-      {/* </HeroCopyWrapper> */}
+        </HeroCopy>
+      </HeroCopyWrapper>
     </HeroWrapper>
   )
 }
