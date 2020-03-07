@@ -93,13 +93,36 @@ export const HeroCopy = styled.div`
     @media screen and (max-width: 1260px) {
       font-size: 3.25rem;
     }
+
+    @media screen and (max-width: 481px) {
+      font-size: 2.7rem;
+    }
+
+    /* older phone smaller screen */
+    @media screen and (max-width: 385px) {
+      font-size: 2.4rem;
+    }
+    @media screen and (max-width: 360px) {
+      font-size: 2.2rem;
+    }
+    /* --------------------------- */
   }
   h2 {
     font-size: 3.5rem;
     font-weight: 400;
+    padding-top: 0.2rem;
 
     @media screen and (max-width: 1260px) {
       font-size: 2.25rem;
+    }
+
+    @media screen and (max-width: 481px) {
+      font-size: 2.2rem;
+    }
+
+    /* older phone smaller screen */
+    @media screen and (max-width: 385px) {
+      font-size: 2rem;
     }
   }
   h3 {
@@ -107,11 +130,17 @@ export const HeroCopy = styled.div`
     font-weight: 100;
     margin-top: 1.25rem;
 
-    /* helps with text wrapping style */
-
     @media screen and (max-width: 1260px) {
       font-size: 1.75rem;
-      /* max-width: 565px; */
+    }
+
+    @media screen and (max-width: 481px) {
+      font-size: 1.55rem;
+    }
+
+    /* older phone smaller screen */
+    @media screen and (max-width: 385px) {
+      font-size: 1.25rem;
     }
   }
 `
