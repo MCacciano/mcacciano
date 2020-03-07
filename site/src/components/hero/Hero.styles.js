@@ -30,6 +30,12 @@ export const HeroCopyWrapper = styled.div`
   background-size: cover;
   background-position: right;
 
+  @media screen and (max-width: 684px) {
+    background: url(./mobile-hero-2.jpg);
+    background-size: cover;
+    background-position: right;
+  }
+
   &:after {
     content: "";
     display: block;
@@ -58,7 +64,7 @@ export const HeroCopy = styled.div`
     grid-template-columns: 1fr;
   }
 
-  @media screen and (max-width: 684px) {
+  @media screen and (max-width: 630px) {
     height: auto;
   }
 
@@ -106,6 +112,7 @@ export const HeroCopy = styled.div`
 
     @media screen and (max-width: 1140px) {
       font-size: 1.75rem;
+      max-width: 565px;
     }
 
     @media screen and (max-width: 550px) {
@@ -139,25 +146,6 @@ export const HeroCopy = styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
-  }
-`
-
-export const HeroImage = styled.div`
-  background: url(./hero-2.jpg);
-  background-size: cover;
-  background-position: top right;
-  position: relative;
-
-  &:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.6);
-    top: 0;
-    left: 0;
-    z-index: 1;
   }
 `
 

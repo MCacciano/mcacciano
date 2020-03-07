@@ -35,10 +35,6 @@ export const Nav = styled.nav`
     width: 100%;
     height: 100%;
     max-width: 1200px;
-
-    @media screen and (max-width: 660px) {
-      padding: 20px;
-    }
   }
 
   .active {
@@ -70,6 +66,10 @@ export const Logo = styled.h1`
   font-size: 1.5rem;
   letter-spacing: 1px;
   font-weight: 700;
+
+  @media screen and (max-width: 336px) {
+    display: none;
+  }
 `
 
 export const Ul = styled.ul`
@@ -77,6 +77,11 @@ export const Ul = styled.ul`
   align-items: center;
   list-style: none;
   height: 100%;
+
+  @media screen and (max-width: 336px) {
+    width: 100%;
+    justify-content: flex-end;
+  }
 `
 
 export const Li = styled.li`
@@ -94,8 +99,8 @@ export const Li = styled.li`
 export const BurgerMenu = styled.i`
   color: rgba(26, 23, 23, 1);
   cursor: pointer;
-  padding: 5px;
-  padding-right: 20px;
+  margin-right: 25px;
+  line-height: 1.5;
 
   display: none;
 
