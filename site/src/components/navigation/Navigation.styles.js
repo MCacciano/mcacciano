@@ -15,7 +15,7 @@ export const Nav = styled.nav`
   height: 8vh;
   line-height: 8vh;
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 812px) and (orientation: landscape) {
     height: 55px;
     line-height: 55px;
   }
