@@ -1,9 +1,9 @@
-import React from "react"
+import React from 'react'
 
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from 'gatsby'
 
 // styled components
-import { HeroWrapper, HeroCopyWrapper, HeroCopy, Span } from "./Hero.styles"
+import { HeroWrapper, HeroCopyWrapper, HeroCopy, Span } from './Hero.styles'
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -21,15 +21,15 @@ const Hero = () => {
   const imageData = data.desktop.childImageSharp.fluid
 
   const SOCIAL_LINKS = [
-    { icon: "github", href: "https://www.github.com/mcacciano" },
-    { icon: "twitter", href: "https://www.twitter.com/king_kooka" },
-    { icon: "linkedin", href: "https://www.linkedin.com/in/michaelcacciano/" },
+    { icon: 'github', href: 'https://www.github.com/mcacciano' },
+    { icon: 'twitter', href: 'https://www.twitter.com/king_kooka' },
+    { icon: 'linkedin', href: 'https://www.linkedin.com/in/michaelcacciano/' },
   ]
 
   return (
     <HeroWrapper imageData={imageData}>
-      <HeroCopyWrapper>
-        <HeroCopy>
+      {/* <HeroCopyWrapper> */}
+      {/* <HeroCopy>
           <ul>
             {SOCIAL_LINKS.map(({ icon, href }) => (
               <li>
@@ -65,8 +65,8 @@ const Hero = () => {
               experiences on the web
             </h3>
           </div>
-        </HeroCopy>
-      </HeroCopyWrapper>
+        </HeroCopy> */}
+      {/* </HeroCopyWrapper> */}
     </HeroWrapper>
   )
 }

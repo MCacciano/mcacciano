@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components"
+import styled, { keyframes } from 'styled-components'
 
-import BackgroundImg from "../background-img/BackgroundImg"
+import BackgroundImg from '../background-img/BackgroundImg'
 
 const growRight = keyframes`
   from {
@@ -16,6 +16,7 @@ export const HeroWrapper = styled(BackgroundImg)`
   display: flex;
 
   height: 92vh;
+  width: 100%;
 
   * {
     color: #0f4c75;
@@ -31,7 +32,7 @@ export const HeroCopyWrapper = styled.div`
   width: 100%;
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 100%;
@@ -70,7 +71,7 @@ export const HeroCopy = styled.div`
   h1 {
     font-size: 4.5rem;
     font-weight: 900;
-    font-family: "Rubik";
+    font-family: 'Rubik';
 
     @media screen and (max-width: 1140px) {
       font-size: 3.75rem;
@@ -89,7 +90,7 @@ export const HeroCopy = styled.div`
   h2 {
     font-size: 4rem;
     font-weight: 400;
-    font-family: "Rubik";
+    font-family: 'Rubik';
 
     @media screen and (max-width: 1140px) {
       font-size: 2.25rem;
@@ -160,11 +161,11 @@ export const Span = styled.span`
   position: relative;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 60%;
-    left: ${({ left }) => (left ? `${left}` : "0")};
-    width: ${({ hWidth }) => (hWidth ? `${hWidth}%` : "0")};
+    left: ${({ left }) => (left ? `${left}` : '0')};
+    width: ${({ hWidth }) => (hWidth ? `${hWidth}%` : '0')};
     height: 30%;
     background: #3282b8;
     opacity: 0.3;
