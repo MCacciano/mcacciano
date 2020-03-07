@@ -87,23 +87,24 @@ export const HeroCopy = styled.div`
   }
 
   h1 {
-    font-size: 5rem;
+    font-size: 4.3rem;
     font-weight: 900;
+    font-family: 'Rubik', Arial, Helvetica, sans-serif;
 
     @media screen and (max-width: 1260px) {
-      font-size: 3.25rem;
+      font-size: 2.8rem;
     }
 
     @media screen and (max-width: 481px) {
-      font-size: 2.7rem;
+      font-size: 2.6rem;
     }
 
     /* older phone smaller screen */
     @media screen and (max-width: 385px) {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
     }
     @media screen and (max-width: 360px) {
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
     /* --------------------------- */
   }
@@ -111,18 +112,19 @@ export const HeroCopy = styled.div`
     font-size: 3.5rem;
     font-weight: 400;
     padding-top: 0.2rem;
+    font-family: 'Rubik', Arial, Helvetica, sans-serif;
 
     @media screen and (max-width: 1260px) {
-      font-size: 2.25rem;
+      font-size: 2.22rem;
     }
 
     @media screen and (max-width: 481px) {
-      font-size: 2.2rem;
+      font-size: 2.15rem;
     }
 
     /* older phone smaller screen */
     @media screen and (max-width: 385px) {
-      font-size: 2rem;
+      font-size: 1.9rem;
     }
   }
   h3 {
