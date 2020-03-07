@@ -173,7 +173,7 @@ export const Span = styled.span`
     width: ${({ hWidth }) => (hWidth ? `${hWidth}%` : "0")};
     height: 30%;
     background: #3282b8;
-    opacity: 0.7;
+    opacity: 0.4;
     z-index: -1;
     max-width: 0;
     animation: ${growRight} ease-in 1s forwards;
