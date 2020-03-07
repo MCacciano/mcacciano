@@ -55,20 +55,35 @@ export const HeroCopyWrapper = styled.div`
 
 export const HeroCopy = styled.div`
   display: flex;
-  justify-content: flex-end;
 
-  width: 100%;
   color: #1b262c;
   padding: 25px;
   line-height: 1;
   z-index: 1;
+  margin: 0 auto;
 
   @media screen and (max-width: 900px) {
     background: #f7f7f7;
+    width: 100%;
+    justify-content: center;
   }
 
   @media screen and (max-width: 630px) {
     flex-direction: column-reverse;
+  }
+
+  div {
+    max-width: 656px;
+
+    @media screen and (max-width: 1260px) {
+      max-width: 432px;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    display: inline-block;
   }
 
   h1 {
@@ -93,11 +108,10 @@ export const HeroCopy = styled.div`
     margin-top: 1.25rem;
 
     /* helps with text wrapping style */
-    max-width: 795px;
 
     @media screen and (max-width: 1260px) {
       font-size: 1.75rem;
-      max-width: 565px;
+      /* max-width: 565px; */
     }
   }
 `
