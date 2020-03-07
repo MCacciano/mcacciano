@@ -28,3 +28,4 @@ export const Title = styled.h1`
   position: relative;
   font-size: 3.5em;
 `
+export default () => <span></span>
