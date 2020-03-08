@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components'
+import { animated } from 'react-spring'
 
 import BackgroundImg from '../background-img/BackgroundImg'
 
@@ -159,7 +160,7 @@ export const SocialList = styled.ul`
   }
 `
 
-export const SocialListItem = styled.li`
+export const SocialListItem = styled(animated.li)`
   margin-top: 0.9rem;
 
   @media screen and (max-width: 630px) {
@@ -168,6 +169,8 @@ export const SocialListItem = styled.li`
     }
   }
 `
+
+export const SocialListIcon = styled(animated.i)``
 
 export const Span = styled.span`
   font-size: ${({ fontSize }) => `${fontSize}rem`};

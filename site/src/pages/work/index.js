@@ -1,12 +1,12 @@
-import React from "react"
+import React from 'react'
 
-import MainLayout from "../../components/main-layout/MainLayout"
+import MainLayout from '../../components/main-layout/MainLayout'
 
 // components
-import ProjectList from "../../components/project-list/ProjectList"
+import ProjectList from '../../components/project-list/ProjectList'
 
 // styled components
-import { WorkWrapper, TitleWrapper, Title } from "./work.styles"
+import { WorkWrapper } from './work.styles'
 
 export default () => {
   return (

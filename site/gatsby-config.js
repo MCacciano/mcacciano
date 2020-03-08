@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Michael Cacciano`,
+    description: `Full Stack Javascript Developer`,
+    author: `Michael Cacciano`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet-async`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -24,14 +24,14 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/mobile-hero-1.jpg`, // This path is relative to the root of the site.
       },
     },
     {
-      resolve: "gatsby-source-sanity",
+      resolve: 'gatsby-source-sanity',
       options: {
-        projectId: "ye5mguwx",
-        dataset: "production",
+        projectId: 'ye5mguwx',
+        dataset: 'production',
         // a token with read permissions is required
         // if you have a private dataset
         token: process.env.SANITY_TOKEN,
@@ -39,16 +39,16 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     {
-      resolve: "gatsby-plugin-prefetch-google-fonts",
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
       options: {
         fonts: [
           {
-            family: "Roboto",
-            variants: ["100", "300", "400", "700", "900"],
+            family: 'Roboto',
+            variants: ['100', '300', '400', '700', '900'],
           },
           {
-            family: "Rubik",
-            variants: ["100", "300", "400", "700", "900"],
+            family: 'Rubik',
+            variants: ['100', '300', '400', '700', '900'],
           },
         ],
       },

@@ -1,15 +1,5 @@
-import React from "react"
-import styled, { keyframes } from "styled-components"
-
-const growRight = keyframes`
-  from {
-    max-width: 0;
-  }
-
-  to {
-    max-width: 100%;
-  }
-`
+import React from 'react'
+import styled from 'styled-components'
 
 export const WorkWrapper = styled.div`
   display: flex;
@@ -24,7 +14,7 @@ export const TitleWrapper = styled.div`
 `
 
 export const Title = styled.h1`
-  font-family: "Rubik";
+  font-family: 'Rubik';
   padding: 1rem;
   position: relative;
   font-size: 3.5em;

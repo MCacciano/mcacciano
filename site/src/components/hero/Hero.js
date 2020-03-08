@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { useStaticQuery, graphql } from 'gatsby'
+import { useTrail } from 'react-spring'
 
 // styled components
 import {
@@ -10,6 +11,7 @@ import {
   Span,
   SocialList,
   SocialListItem,
+  SocialListIcon,
 } from './Hero.styles'
 
 const Hero = () => {
@@ -33,18 +35,33 @@ const Hero = () => {
     { icon: 'linkedin', href: 'https://www.linkedin.com/in/michaelcacciano/' },
   ]
 
+  const trail = useTrail(SOCIAL_LINKS.length, {
+    transform: 'scale(1)',
+    opacity: 1,
+    from: { transform: 'scale(0)', opacity: '0' },
+  })
+
   return (
     <HeroWrapper imageData={imageData}>
       <HeroCopyWrapper>
         <HeroCopy>
           <SocialList>
-            {SOCIAL_LINKS.map(({ icon, href }) => (
-              <SocialListItem key={icon}>
-                <a href={href} className={icon} target="_blank">
-                  <i className={`fab fa-${icon} fa-2x`} />
-                </a>
-              </SocialListItem>
-            ))}
+            {trail.map(({ ...styles }, i) => {
+              const { href, icon } = SOCIAL_LINKS[i]
+
+              return (
+                <SocialListItem key={i} style={{ ...styles }}>
+                  <a
+                    href={href}
+                    className={icon}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <SocialListIcon className={`fab fa-${icon} fa-2x`} />
+                  </a>
+                </SocialListItem>
+              )
+            })}
           </SocialList>
           <div>
             <h1>
