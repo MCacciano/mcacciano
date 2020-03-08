@@ -13,7 +13,6 @@ export const Nav = styled.nav`
   left: 0;
   z-index: 2;
   height: 8vh;
-  line-height: 8vh;
 
   @media screen and (max-width: 812px) and (orientation: landscape) {
     height: 55px;
@@ -36,7 +35,8 @@ export const Nav = styled.nav`
 `
 
 export const GLink = styled(animated(Link))`
-  display: block;
+  display: flex;
+  align-items: center;
   color: #f7f7f7;
   height: 100%;
   padding: 0 1.25rem;
@@ -69,13 +69,12 @@ export const Ul = styled.ul`
 
 export const Li = styled.li`
   text-transform: uppercase;
-  letter-spacing: 1px;
   height: 100%;
 
   @media screen and (max-width: 660px) {
-    &:last-child {
+    /* &:last-child {
       margin-right: 25px;
-    }
+    } */
 
     &:not(:last-child) {
       display: none;
@@ -86,12 +85,39 @@ export const Li = styled.li`
 export const BurgerMenu = styled.i`
   color: rgba(26, 23, 23, 1);
   cursor: pointer;
-  line-height: 1.6;
+  padding: 0 1.25rem;
+  height: 100%;
+  color: #f7f7f7;
 
   display: none;
 
   @media screen and (max-width: 660px) {
-    display: inline-block;
-    color: #f7f7f7;
+    display: flex;
+    align-items: center;
+  }
+`
+export const MobileNav = styled.ul`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: absolute;
+  top: 8vh;
+  right: 0;
+  width: ${({ width }) => (width ? `${width}` : 0)};
+  transition: width 400ms;
+  height: 92vh;
+
+  background: #0f4c75;
+
+  li {
+    a {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: 3rem;
+      font-family: 'Rubik', Arial, Helvetica, sans-serif;
+      padding: 2rem 1rem;
+    }
   }
 `

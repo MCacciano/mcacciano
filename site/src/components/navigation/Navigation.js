@@ -1,32 +1,46 @@
 import React from 'react'
 
-import { Nav, Logo, Ul, Li, GLink, BurgerMenu } from './Navigation.styles'
+import {
+  Nav,
+  MobileNav,
+  Logo,
+  Ul,
+  Li,
+  GLink,
+  BurgerMenu,
+} from './Navigation.styles'
 
 const Navigation = () => {
-  const [isMobile, setIsMobile] = React.useState(false)
-
-  React.useEffect(() => {
-    window.addEventListener('resize', e => {
-      if (window.matchMedia('(max-width: 660px)').matches) {
-        console.log('matches')
-      }
-    })
-  }, [window.matchMedia('(max-width: 660px)').matches])
+  const [isOpen, setIsOpen] = React.useState(false)
+  const [width, setWidth] = React.useState('')
 
   const navItems = [
     {
-      to: '/',
+      to: '/work',
       text: 'Work',
     },
     {
-      to: '/',
+      to: '/blog',
       text: 'Blog',
     },
     {
-      to: '/',
+      to: '/about',
       text: 'About',
     },
+    {
+      to: '/contact',
+      text: 'Contact',
+    },
   ]
+
+  const toggleMobileNav = () => {
+    if (isOpen) {
+      setWidth('0')
+    } else {
+      setWidth('100vw')
+    }
+    setIsOpen(!isOpen)
+  }
 
   return (
     <Nav>
@@ -35,24 +49,27 @@ const Navigation = () => {
           <GLink to="/">Michael Cacciano</GLink>
         </Logo>
         <Ul>
-          {!isMobile &&
-            navItems.map(({ to, text }) => (
-              <Li>
-                <GLink activeClassName="active" to={to}>
-                  {text}
-                </GLink>
-              </Li>
-            ))}
+          {navItems.map(({ to, text }, i) => (
+            <Li key={i}>
+              <GLink activeClassName="active" to={to}>
+                {text}
+              </GLink>
+            </Li>
+          ))}
           <Li>
-            <BurgerMenu className="fa fa-bars fa-2x" />
-            {isMobile &&
-              navItems.map(({ to, text }) => (
-                <Li>
+            <BurgerMenu
+              className="fa fa-bars fa-2x"
+              onClick={toggleMobileNav}
+            />
+            <MobileNav width={width}>
+              {navItems.map(({ to, text }, i) => (
+                <li key={i}>
                   <GLink activeClassName="active" to={to}>
                     {text}
                   </GLink>
-                </Li>
+                </li>
               ))}
+            </MobileNav>
           </Li>
         </Ul>
       </div>
