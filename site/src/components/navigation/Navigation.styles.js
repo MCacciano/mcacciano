@@ -1,7 +1,7 @@
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
 
-import styled from "styled-components"
-import { animated } from "react-spring"
+import styled from 'styled-components'
+import { animated } from 'react-spring'
 
 export const Nav = styled.nav`
   width: 100%;
@@ -40,7 +40,7 @@ export const GLink = styled(animated(Link))`
   color: #f7f7f7;
   height: 100%;
   padding: 0 1.25rem;
-  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  font-family: 'Rubik', Arial, Helvetica, sans-serif;
 
   &:hover {
     background: rgba(0, 0, 0, 0.3);
@@ -57,13 +57,7 @@ export const GLink = styled(animated(Link))`
 
 export const Logo = styled.h1`
   font-size: 1.5rem;
-  letter-spacing: 1px;
   font-weight: 700;
-
-  /* @media screen and (max-width: 336px) { */
-  @media screen and (max-width: 535px) {
-    display: none;
-  }
 `
 
 export const Ul = styled.ul`
@@ -71,16 +65,6 @@ export const Ul = styled.ul`
   align-items: center;
   list-style: none;
   height: 100%;
-
-  @media screen and (max-width: 535px) {
-    width: 100%;
-    justify-content: center;
-  }
-
-  @media screen and (max-width: 336px) {
-    width: 100%;
-    justify-content: flex-end;
-  }
 `
 
 export const Li = styled.li`
@@ -88,12 +72,7 @@ export const Li = styled.li`
   letter-spacing: 1px;
   height: 100%;
 
-  /* this will be changed when mobile nav is done */
-  &:last-child {
-    display: none;
-  }
-
-  /* @media screen and (max-width: 660px) {
+  @media screen and (max-width: 660px) {
     &:last-child {
       margin-right: 25px;
     }
@@ -101,7 +80,7 @@ export const Li = styled.li`
     &:not(:last-child) {
       display: none;
     }
-  } */
+  }
 `
 
 export const BurgerMenu = styled.i`

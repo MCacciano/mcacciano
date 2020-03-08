@@ -96,15 +96,15 @@ export const HeroCopy = styled.div`
     }
 
     @media screen and (max-width: 481px) {
-      font-size: 2.6rem;
+      font-size: 2.3rem;
     }
 
     /* older phone smaller screen */
     @media screen and (max-width: 385px) {
-      font-size: 2.2rem;
+      font-size: 2.1rem;
     }
     @media screen and (max-width: 360px) {
-      font-size: 2rem;
+      font-size: 1.7rem;
     }
     /* --------------------------- */
   }
@@ -124,7 +124,8 @@ export const HeroCopy = styled.div`
 
     /* older phone smaller screen */
     @media screen and (max-width: 385px) {
-      font-size: 1.9rem;
+      padding-top: 0.5rem;
+      font-size: 1.4rem;
     }
   }
   h3 {
