@@ -38,7 +38,7 @@ const Hero = () => {
   const trail = useTrail(SOCIAL_LINKS.length, {
     transform: 'scale(1)',
     opacity: 1,
-    from: { transform: 'scale(0)', opacity: '0' },
+    from: { transform: 'scale(0.1)', opacity: '0.1' },
   })
 
   return (

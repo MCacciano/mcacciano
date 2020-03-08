@@ -18,11 +18,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Michael Cacciano Portfolio`,
+        short_name: `MCacciano`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#0f4c75`,
+        theme_color: `#0f4c75`,
         display: `minimal-ui`,
         icon: `src/images/mobile-hero-1.jpg`, // This path is relative to the root of the site.
       },
