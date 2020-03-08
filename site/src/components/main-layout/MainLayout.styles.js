@@ -9,6 +9,10 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     color: #171717;
