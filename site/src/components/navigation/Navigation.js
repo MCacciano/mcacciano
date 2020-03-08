@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { useChain, useSpring } from 'react-spring'
+
 import {
   Nav,
   MobileNav,
@@ -10,9 +12,10 @@ import {
   BurgerMenu,
 } from './Navigation.styles'
 
-const Navigation = () => {
+const Navigation = props => {
   const [isOpen, setIsOpen] = React.useState(false)
-  const [width, setWidth] = React.useState('')
+
+  const [navProps, set] = useSpring(() => ({ width: '0vw' }))
 
   const navItems = [
     {
@@ -34,12 +37,8 @@ const Navigation = () => {
   ]
 
   const toggleMobileNav = () => {
-    if (isOpen) {
-      setWidth('0')
-    } else {
-      setWidth('100vw')
-    }
     setIsOpen(!isOpen)
+    set({ width: isOpen ? '0vw' : '100vw' })
   }
 
   return (
@@ -61,7 +60,7 @@ const Navigation = () => {
               className="fa fa-bars fa-2x"
               onClick={toggleMobileNav}
             />
-            <MobileNav width={width}>
+            <MobileNav style={navProps}>
               {navItems.map(({ to, text }, i) => (
                 <li key={i}>
                   <GLink activeClassName="active" to={to}>

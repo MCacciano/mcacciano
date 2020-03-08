@@ -72,10 +72,6 @@ export const Li = styled.li`
   height: 100%;
 
   @media screen and (max-width: 660px) {
-    /* &:last-child {
-      margin-right: 25px;
-    } */
-
     &:not(:last-child) {
       display: none;
     }
@@ -96,7 +92,7 @@ export const BurgerMenu = styled.i`
     align-items: center;
   }
 `
-export const MobileNav = styled.ul`
+export const MobileNav = styled(animated.ul)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,9 +100,9 @@ export const MobileNav = styled.ul`
   position: absolute;
   top: 8vh;
   right: 0;
-  width: ${({ width }) => (width ? `${width}` : 0)};
-  transition: width 400ms;
+  width: 0;
   height: 92vh;
+  z-index: 9001;
 
   background: #0f4c75;
 

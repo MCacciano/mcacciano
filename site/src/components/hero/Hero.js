@@ -38,6 +38,7 @@ const Hero = () => {
   const trail = useTrail(SOCIAL_LINKS.length, {
     transform: 'scale(1)',
     opacity: 1,
+    trail: 500,
     from: { transform: 'scale(0.1)', opacity: '0.1' },
   })
 
