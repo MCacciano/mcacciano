@@ -100,20 +100,19 @@ export const MobileNav = styled(animated.ul)`
   position: absolute;
   top: 8vh;
   right: 0;
-  width: 0;
+  /* width: 0; */
   height: 92vh;
   z-index: 9001;
 
   background: #0f4c75;
-
-  li {
-    a {
-      display: block;
-      width: 100%;
-      text-align: center;
-      font-size: 3rem;
-      font-family: 'Rubik', Arial, Helvetica, sans-serif;
-      padding: 2rem 1rem;
-    }
+`
+export const MobileNavItem = styled(animated.li)`
+  a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Rubik', Arial, Helvetica, sans-serif;
+    padding: 2rem 1rem;
   }
 `
