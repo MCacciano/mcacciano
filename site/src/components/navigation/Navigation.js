@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { useChain, useTransition, useSpring } from 'react-spring'
+// import { useChain, useTransition, useSpring } from 'react-spring'
+import { Keyframes } from 'react-spring/renderprops'
 
 import {
   Nav,
@@ -34,45 +35,38 @@ const Navigation = () => {
   ]
 
   const [isOpen, setIsOpen] = React.useState(false)
-  const [navLinks, setNavLinks] = React.useState([])
+  const Testerer = Keyframes.Spring({
+    openAndClose: [{ width: '0vw' }, { width: '100vw' }],
+  })
+  // const [navLinks, setNavLinks] = React.useState([])
 
-  const menuRef = React.useRef()
-  const [navSpring, set] = useSpring(() => ({
-    to: { width: '0vw' },
-    // ref: navSpringRef,
-  }))
-
-  // const navSpringItemRef = React.useRef()
-  // const navItemSpring = useSpring(() => ({
-  //   config: {
-  //     clamp: true,
-  //     velocity: 10,
-  //   },
-  //   from: { transform: 'scale(0)' },
-  //   to: { transform: 'scale(1)' },
-  //   ref: navSpringItemRef,
+  // const menuRef = React.useRef()
+  // const [navSpring, set] = useSpring(() => ({
+  //   to: { width: '0vw' },
+  //   ref: menuRef,
   // }))
 
-  const itemRef = React.useRef()
-  const transitions = useTransition(navLinks, item => item.text, {
-    from: { transform: 'scale(0)', opacity: 0 },
-    enter: { transform: 'scale(1)', opacity: 1 },
-    leave: { transform: 'scale(0)', opacity: 0 },
-    // ref: navItemTransRef,
-  })
+  // const itemRef = React.useRef()
+  // const transitions = useTransition(navLinks, item => item.text, {
+  //   from: { transform: 'scale(0)', opacity: 0 },
+  //   enter: { transform: 'scale(1)', opacity: 1 },
+  //   leave: { transform: 'scale(0)', opacity: 0 },
+  //   ref: itemRef,
+  // })
 
-  useChain([menuRef, itemRef])
+  // useChain([menuRef, itemRef])
 
   const toggleMobileNav = () => {
+    console.log(isOpen)
     setIsOpen(!isOpen)
 
-    if (navLinks.length) {
-      setNavLinks([])
-    } else {
-      setNavLinks(navItems)
-    }
-
-    set({ width: isOpen ? '0vw' : '100vw' })
+    // if (isOpen) {
+    //   set({ width: '0vw' })
+    //   setNavLinks([])
+    // } else {
+    //   set({ width: '100vw' })
+    //   setNavLinks(navItems)
+    // }
   }
 
   return (
@@ -94,15 +88,19 @@ const Navigation = () => {
               className="fa fa-bars fa-2x"
               onClick={toggleMobileNav}
             />
-            <MobileNav style={navSpring}>
-              {transitions.map(({ item: { to, text }, key, props }) => (
-                <MobileNavItem style={props} key={key}>
-                  <GLink activeClassName="active" to={to}>
-                    {text}
-                  </GLink>
-                </MobileNavItem>
-              ))}
-            </MobileNav>
+            <Testerer state="openAndClose">
+              {styles => (
+                <MobileNav style={styles}>
+                  {navItems.map(({ to, text }, i) => (
+                    <MobileNavItem key={i}>
+                      <GLink activeClassName="active" to={to}>
+                        {text}
+                      </GLink>
+                    </MobileNavItem>
+                  ))}
+                </MobileNav>
+              )}
+            </Testerer>
           </Li>
         </Ul>
       </div>

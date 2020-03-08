@@ -100,7 +100,7 @@ export const MobileNav = styled(animated.ul)`
   position: absolute;
   top: 8vh;
   right: 0;
-  /* width: 0; */
+  width: 0;
   height: 92vh;
   z-index: 9001;
 
