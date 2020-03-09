@@ -9,7 +9,7 @@ const PreviewPage = () => {
   return (
     <MainLayout>
       <Router>
-        <BlogPostPreview path="/app/preview/:id" />
+        <BlogPostPreview path="preview/:id" />
       </Router>
     </MainLayout>
   )
