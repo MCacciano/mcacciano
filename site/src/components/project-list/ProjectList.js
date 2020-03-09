@@ -1,61 +1,75 @@
 import React from 'react'
 
-import { useStaticQuery, graphql } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
+import { useStaticQuery, graphql, useQuery } from 'gatsby'
+import Img from 'gatsby-image'
+// import BackgroundImage from 'gatsby-background-image'
 
-import { Projects } from './ProjectList.styles'
+import { Projects, Project } from './ProjectList.styles'
 
-export default () => {
-  const data = useStaticQuery(graphql`
+const ProjectList = () => {
+  const query = useStaticQuery(graphql`
     query {
-      desktop: file(relativePath: { eq: "blog-tile.jpg" }) {
-        childImageSharp {
-          fluid(quality: 90, maxWidth: 1920) {
-            ...GatsbyImageSharpFluid_withWebp
+      projects: allSanityProject {
+        edges {
+          node {
+            description
+            title
+            tech {
+              title
+              shortname
+            }
+            slug {
+              current
+            }
+            image {
+              asset {
+                fluid {
+                  aspectRatio
+                }
+              }
+            }
+            author {
+              name
+              image {
+                asset {
+                  fluid {
+                    src
+                  }
+                }
+              }
+              slug {
+                current
+              }
+            }
+            id
           }
         }
       }
     }
   `)
-  const imageData = data.desktop.childImageSharp.fluid
 
+  console.log('query', query)
+  const { projects } = query
   return (
     <Projects>
-      <BackgroundImage Tag="li" fluid={imageData}>
-        <a href="/">
-          <div>One</div>
-        </a>
-      </BackgroundImage>
-      <BackgroundImage Tag="li" fluid={imageData}>
-        <a href="/">
-          <div>Two</div>
-        </a>
-      </BackgroundImage>
-      <BackgroundImage Tag="li" fluid={imageData}>
-        <a href="/">
-          <div>Three</div>
-        </a>
-      </BackgroundImage>
-      <BackgroundImage Tag="li" fluid={imageData}>
-        <a href="/">
-          <div>Four</div>
-        </a>
-      </BackgroundImage>
-      <BackgroundImage Tag="li" fluid={imageData}>
-        <a href="/">
-          <div>Five</div>
-        </a>
-      </BackgroundImage>
-      <BackgroundImage Tag="li" fluid={imageData}>
-        <a href="/">
-          <div>Six</div>
-        </a>
-      </BackgroundImage>
-      <BackgroundImage Tag="li" fluid={imageData}>
-        <a href="/">
-          <div>Six</div>
-        </a>
-      </BackgroundImage>
+      <h1>placeholder</h1>
+      {projects.edges.map(({ node: project }, i) => {
+        return (
+          // <BackgroundImage key={i} Tag="li" fluid={project.image.asset.fluid}>
+          //   <a href="/">
+          //     <div>
+          //       <span>{project.title}</span>
+          //     </div>
+          //   </a>
+          // </BackgroundImage>
+          <Project key={i}>
+            <h2>{project.title}</h2>
+            <Img fluid={project.image.asset.fluid} alt={project.title} />
+          </Project>
+        )
+      })}
     </Projects>
   )
 }
+
+export default ProjectList

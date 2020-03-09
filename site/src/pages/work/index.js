@@ -5,15 +5,10 @@ import MainLayout from '../../components/main-layout/MainLayout'
 // components
 import ProjectList from '../../components/project-list/ProjectList'
 
-// styled components
-import { WorkWrapper } from './work.styles'
-
 export default () => {
   return (
     <MainLayout>
-      <WorkWrapper>
-        <ProjectList />
-      </WorkWrapper>
+      <ProjectList />
     </MainLayout>
   )
 }

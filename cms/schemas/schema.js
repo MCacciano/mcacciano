@@ -8,6 +8,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import blogPost from './documents/blogPost';
 import author from './documents/author';
 import category from './documents/category';
+import project from './documents/project';
+import tech from './documents/tech';
 
 // objects
 
@@ -17,5 +19,5 @@ export default createSchema({
   name: 'default',
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
-  types: schemaTypes.concat([blogPost, author, category])
+  types: schemaTypes.concat([blogPost, author, category, project, tech])
 });
