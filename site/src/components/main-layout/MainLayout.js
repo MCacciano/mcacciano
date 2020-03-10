@@ -9,7 +9,7 @@ const MainLayout = ({ children }) => {
   return (
     <>
       <GlobalStyles />
-      <header>
+      <header style={{ position: 'sticky', zIndex: '9001', top: '0' }}>
         <Navigation />
       </header>
       <main>{children}</main>

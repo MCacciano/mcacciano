@@ -8,6 +8,7 @@ const IndexPage = () => (
   <MainLayout>
     <SEO title="Home" />
     <Hero />
+    <div style={{ height: '1000px', background: 'red' }}></div>
   </MainLayout>
 )
 
