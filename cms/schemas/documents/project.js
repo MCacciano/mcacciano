@@ -32,6 +32,11 @@ export default {
       }
     },
     {
+      name: 'overlay',
+      title: 'Overlay Color',
+      type: 'color'
+    },
+    {
       name: 'tech',
       title: 'Tech',
       description: 'Tech used to create project',

@@ -19,10 +19,6 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
   }
 
-  main {
-    height: 92vh;
-  }
-
   ul {
     list-style: none;
   }

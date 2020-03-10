@@ -33,6 +33,7 @@ export const pageQuery = graphql`
     projects: allSanityProject {
       edges {
         node {
+          id
           description
           title
           tech {
@@ -49,6 +50,13 @@ export const pageQuery = graphql`
               }
             }
           }
+          overlay {
+            rgb {
+              r
+              g
+              b
+            }
+          }
           author {
             name
             image {
@@ -63,7 +71,6 @@ export const pageQuery = graphql`
               current
             }
           }
-          id
         }
       }
     }
