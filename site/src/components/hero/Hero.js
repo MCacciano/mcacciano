@@ -44,7 +44,8 @@ const Hero = () => {
 
   return (
     <HeroWrapper imageData={imageData}>
-      <HeroCopyWrapper>
+      <div></div>
+      {/* <HeroCopyWrapper>
         <HeroCopy>
           <SocialList>
             {trail.map(({ ...styles }, i) => {
@@ -91,7 +92,7 @@ const Hero = () => {
             </h3>
           </div>
         </HeroCopy>
-      </HeroCopyWrapper>
+      </HeroCopyWrapper> */}
     </HeroWrapper>
   )
 }

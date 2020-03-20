@@ -16,8 +16,21 @@ const growRight = keyframes`
 export const HeroWrapper = styled(BackgroundImg)`
   display: flex;
 
-  height: 92vh;
+  height: 70vh;
   width: 100vw;
+  position: relative;
+
+  div {
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+    width: 100%;
+    clip-path: ellipse();
+    height: 75px;
+    background: #f4f4f4;
+    background: red;
+    z-index: -101;
+  }
 
   background-position: bottom right;
 
