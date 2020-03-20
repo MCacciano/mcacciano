@@ -44,7 +44,10 @@ const Hero = () => {
 
   return (
     <HeroWrapper imageData={imageData}>
-      <div></div>
+      <div id="overlay"></div>
+      <div id="oval-1"></div>
+      <div id="oval-2"></div>
+      <div id="oval-3"></div>
       {/* <HeroCopyWrapper>
         <HeroCopy>
           <SocialList>

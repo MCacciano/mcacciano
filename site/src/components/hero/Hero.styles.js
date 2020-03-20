@@ -20,16 +20,60 @@ export const HeroWrapper = styled(BackgroundImg)`
   width: 100vw;
   position: relative;
 
-  div {
+  div#oval-1:not(#overlay) {
     position: absolute;
     left: 0;
     bottom: -50px;
     width: 100%;
     clip-path: ellipse();
-    height: 75px;
-    background: #f4f4f4;
-    background: red;
+    height: 100px;
+    background: rgba(50, 130, 184, 0.3);
+    opacity: 0.4;
     z-index: -101;
+  }
+  div#oval-2:not(#overlay) {
+    position: absolute;
+    left: 0px;
+    bottom: -20px;
+    width: 100%;
+    clip-path: ellipse();
+    height: 100px;
+    background: rgba(50, 130, 184, 0.6);
+    opacity: 0.4;
+    z-index: -101;
+    transform: rotate(2deg);
+  }
+  div#oval-3:not(#overlay) {
+    position: absolute;
+    left: 0px;
+    bottom: -20px;
+    width: 100%;
+    clip-path: ellipse();
+    height: 100px;
+    background: rgba(50, 130, 184, 1);
+    opacity: 0.4;
+    z-index: -101;
+    transform: rotate(-2deg);
+  }
+
+  #overlay {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom right,
+      rgba(50, 130, 184, 0.7),
+      rgba(50, 130, 184, 0.5),
+      rgba(50, 130, 184, 0.4),
+      rgba(50, 130, 184, 0.5),
+      rgba(50, 130, 184, 0.7)
+    );
+
+    z-index: -99;
   }
 
   background-position: bottom right;
