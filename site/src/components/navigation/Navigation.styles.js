@@ -19,8 +19,8 @@ export const Nav = styled.nav`
     line-height: 55px;
   }
 
-  /* background: #0f4c75; */
-  background: #f4f4f4;
+  background: #0f4c75;
+  /* background: #f4f4f4; */
 
   div {
     display: flex;
@@ -38,7 +38,7 @@ export const Nav = styled.nav`
 export const GLink = styled(animated(Link))`
   display: flex;
   align-items: center;
-  color: rgb(26, 23, 23);
+  color: #f7f7f7;
   height: 100%;
   padding: 0 1.25rem;
   font-family: 'Rubik', Arial, Helvetica, sans-serif;
@@ -48,11 +48,11 @@ export const GLink = styled(animated(Link))`
   }
 
   &:active {
-    color: rgb(26, 23, 23);
+    color: #f7f7f7;
   }
 
   &:visited {
-    color: rgb(26, 23, 23);
+    color: #f7f7f7;
   }
 `
 
@@ -84,7 +84,7 @@ export const BurgerMenu = styled.i`
   cursor: pointer;
   padding: 0 1.25rem;
   height: 100%;
-  color: rgb(26, 23, 23);
+  color: #f7f7f7;
 
   display: none;
 
