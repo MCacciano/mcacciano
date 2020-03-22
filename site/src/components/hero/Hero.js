@@ -47,15 +47,17 @@ const Hero = () => {
 
   return (
     <HeroWrapper imageData={imageData}>
-      <div id="overlay"></div>
-      <div id="oval-1" class="hero-oval"></div>
+      <div class="overlay overlay-black"></div>
+      <div class="overlay overlay-blue"></div>
+      {/* <div id="oval-1" class="hero-oval"></div> */}
+      {/* <div id="oval-1" class="hero-oval"></div>
       <div id="oval-2" class="hero-oval"></div>
-      <div id="oval-3" class="hero-oval"></div>
+      <div id="oval-3" class="hero-oval"></div> */}
       <HeroCopyWrapper>
         <HeroCopy>
           <H1>
             <Span hWidth={97} left="4px">
-              Michael Cacciano{' '}
+              Michael Cacciano
             </Span>
           </H1>
           <H2>

@@ -16,40 +16,43 @@ const growRight = keyframes`
 export const HeroWrapper = styled(BackgroundImg)`
   display: flex;
 
-  height: 70vh;
+  height: 80vh;
   width: 100vw;
   position: relative;
+  background-position: bottom right;
 
   .hero-oval {
     position: absolute;
     left: 0;
-    clip-path: ellipse();
+    /* clip-path: ellipse(); */
     width: 100%;
     z-index: -101;
 
     &#oval-1 {
-      bottom: -50px;
+      bottom: -45px;
       height: 100px;
       background: rgba(50, 130, 184, 0.3);
-      /* opacity: 0.4; */
+    }
+    /* &#oval-1 {
+      bottom: -45px;
+      height: 100px;
+      background: rgba(50, 130, 184, 0.3);
     }
     &#oval-2 {
       bottom: -20px;
       height: 100px;
       background: rgba(50, 130, 184, 0.6);
-      /* opacity: 0.4; */
       transform: rotate(2deg);
     }
     &#oval-3 {
       bottom: -20px;
       height: 100px;
-      background: rgba(50, 130, 184, 1);
-      /* opacity: 0.4; */
+      background: rgba(50, 130, 184, 0.6);
       transform: rotate(-2deg);
-    }
+    } */
   }
 
-  #overlay {
+  .overlay {
     display: block;
     content: '';
     position: absolute;
@@ -57,19 +60,25 @@ export const HeroWrapper = styled(BackgroundImg)`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      to bottom right,
-      rgba(50, 130, 184, 0.7),
-      rgba(50, 130, 184, 0.5),
-      rgba(50, 130, 184, 0.4),
-      rgba(50, 130, 184, 0.5),
-      rgba(50, 130, 184, 0.7)
-    );
-
     z-index: -99;
-  }
 
-  background-position: bottom right;
+    &-black {
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    &-blue {
+      background: rgba(50, 130, 184, 0.5);
+
+      /* background: linear-gradient(
+        to bottom right,
+        rgba(50, 130, 184, 0.7),
+        rgba(50, 130, 184, 0.5),
+        rgba(50, 130, 184, 0.4),
+        rgba(50, 130, 184, 0.5),
+        rgba(50, 130, 184, 0.7)
+      ); */
+    }
+  }
 
   * {
     color: #f7f7f7;
@@ -180,7 +189,7 @@ export const Span = styled.span`
     width: ${({ hWidth }) => (hWidth ? `${hWidth}%` : '0')};
     height: 30%;
     background: #3282b8;
-    opacity: 0.3;
+    /* opacity: 0.3; */
     z-index: -1;
     max-width: 0;
     animation: ${growRight} ease-in 1s forwards;
