@@ -100,10 +100,10 @@ export const HeroCopy = styled.div`
   grid-template-columns: 1fr;
   gap: 10px;
   align-content: center;
-  justify-items: center;
-  padding: 5px;
+  justify-items: start;
+  padding: 0 10px;
 
-  text-align: center;
+  text-align: left;
   max-width: 800px;
 
   @media screen and (min-width: 880px) {
@@ -131,7 +131,7 @@ export const H2 = styled.h2`
 `
 export const H3 = styled.h3`
   max-width: 600px;
-  font-size: 1.65rem;
+  font-size: 1.7rem;
 
   @media screen and (min-width: 768px) {
     font-size: 2.2rem;
@@ -147,7 +147,7 @@ export const SocialListIcon = styled.i``
 export const Span = styled.span`
   /* font-size: ${({ fontSize }) => `${fontSize}rem`}; */
   font-weight: ${({ fontWeight }) => `${fontWeight}`};
-  letter-spacing: 1px;
+  /* letter-spacing: 1px;
   vertical-align: bottom;
   position: relative;
 
@@ -160,11 +160,10 @@ export const Span = styled.span`
       highlightWidth ? `${highlightWidth}%` : '0'};
     height: 30%;
     background: #3282b8;
-    /* opacity: 0.3; */
     z-index: -1;
     max-width: 0;
     animation: ${growRight} ease-in 1s forwards;
-  }
+  } */
 `
 
 // export const HeroCopyWrapper = styled.div`
