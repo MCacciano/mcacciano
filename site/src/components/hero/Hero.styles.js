@@ -87,84 +87,54 @@ export const HeroWrapper = styled(BackgroundImg)`
 
 export const HeroCopyWrapper = styled.div`
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
   width: 100%;
 
-  @media screen and (max-width: 998px) {
-    text-align: center;
-    justify-content: center;
+  @media screen and (min-width: 880px) {
+    justify-content: flex-start;
   }
 `
 
 export const HeroCopy = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0 10px;
-  margin-left: 200px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-content: center;
+  justify-items: center;
+  padding: 5px;
 
-  max-width: 600px;
-  color: #f7f7f7;
+  text-align: center;
+  max-width: 800px;
 
-  @media screen and (max-width: 998px) {
-    margin: 0;
+  @media screen and (min-width: 880px) {
+    margin-left: 200px;
+    text-align: left;
+    justify-items: start;
   }
-
-  /* padding: 25px;
-  line-height: 1;
-  z-index: 1;
-  margin: 0 auto; */
 `
 
 export const H1 = styled.h1`
-  font-size: 4rem;
+  font-size: 3.75rem;
   font-family: 'Rubik', Arial, Helvetica, sans-serif;
 
-  @media screen and (max-width: 998px) {
-    margin: 0 auto;
-  }
-
-  @media screen and (max-width: 620px) {
-    font-size: 3rem;
-  }
-
-  @media screen and (max-width: 460px) {
-    font-size: 2.3rem;
+  @media screen and (min-width: 768px) {
+    font-size: 4.5rem;
   }
 `
 export const H2 = styled.h2`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: 'Rubik', Arial, Helvetica, sans-serif;
 
-  @media screen and (max-width: 998px) {
-    margin: 0 auto;
-  }
-
-  @media screen and (max-width: 620px) {
-    font-size: 2rem;
-  }
-
-  @media screen and (max-width: 460px) {
-    padding-top: 5px;
-    font-size: 1.65rem;
+  @media screen and (min-width: 768px) {
+    font-size: 3.1rem;
   }
 `
 export const H3 = styled.h3`
-  font-size: 2rem;
-  max-width: 100%;
+  max-width: 600px;
+  font-size: 1.65rem;
 
-  @media screen and (max-width: 998px) {
-    margin: 0 auto;
-  }
-
-  @media screen and (max-width: 620px) {
-    font-size: 1.5rem;
-  }
-
-  @media screen and (max-width: 460px) {
-    padding-top: 10px;
-    font-size: 1.3rem;
+  @media screen and (min-width: 768px) {
+    font-size: 2.2rem;
   }
 `
 
@@ -175,7 +145,7 @@ export const SocialListItem = styled.li``
 export const SocialListIcon = styled.i``
 
 export const Span = styled.span`
-  font-size: ${({ fontSize }) => `${fontSize}rem`};
+  /* font-size: ${({ fontSize }) => `${fontSize}rem`}; */
   font-weight: ${({ fontWeight }) => `${fontWeight}`};
   letter-spacing: 1px;
   vertical-align: bottom;
@@ -186,7 +156,8 @@ export const Span = styled.span`
     position: absolute;
     top: 60%;
     left: ${({ left }) => (left ? `${left}` : '0')};
-    width: ${({ hWidth }) => (hWidth ? `${hWidth}%` : '0')};
+    width: ${({ highlightWidth }) =>
+      highlightWidth ? `${highlightWidth}%` : '0'};
     height: 30%;
     background: #3282b8;
     /* opacity: 0.3; */

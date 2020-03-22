@@ -56,25 +56,25 @@ const Hero = () => {
       <HeroCopyWrapper>
         <HeroCopy>
           <H1>
-            <Span hWidth={97} left="4px">
+            <Span highlightWidth={97} left="4px">
               Michael Cacciano
             </Span>
           </H1>
           <H2>
-            <Span>Front </Span>
-            <Span>End </Span>
+            <Span>Full </Span>
+            <Span>Stack </Span>
             <Span>Developer </Span>
           </H2>
           <H3>
-            <Span fontWeight={300} hWidth={89} left="3px">
+            <Span fontWeight={300} highlightWidth={89} left="3px">
               Passion{' '}
             </Span>
             for creating{' '}
-            <Span fontWeight={300} hWidth={90} left="2px">
+            <Span fontWeight={300} highlightWidth={90} left="2px">
               simplistic{' '}
             </Span>
             and{' '}
-            <Span fontWeight={300} hWidth={92} left="2px">
+            <Span fontWeight={300} highlightWidth={92} left="2px">
               engaging{' '}
             </Span>
             experiences on the web
