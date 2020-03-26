@@ -1,18 +1,11 @@
 import React from 'react'
 
 import { useStaticQuery, graphql } from 'gatsby'
-import { useTrail } from 'react-spring'
+import GImg from '../g-img/GImg'
+// import { useTrail } from 'react-spring'
 
 // styled components
-import {
-  HeroWrapper,
-  HeroCopyWrapper,
-  HeroCopy,
-  Span,
-  H1,
-  H3,
-  H2,
-} from './Hero.styles'
+import { HeroSection, HeroBanner } from './Hero.styles'
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -27,7 +20,7 @@ const Hero = () => {
     }
   `)
 
-  const imageData = data.desktop.childImageSharp.fluid
+  const { fluid } = data.desktop.childImageSharp
 
   const SOCIAL_LINKS = [
     { icon: 'github', href: 'https://www.github.com/mcacciano' },
@@ -43,57 +36,45 @@ const Hero = () => {
   // })
 
   return (
-    <HeroWrapper imageData={imageData}>
+    <HeroSection className="hero" Tag="section" fluid={fluid}>
       <div class="overlay overlay-black"></div>
-      <div class="overlay overlay-blue"></div>
-      <HeroCopyWrapper>
-        <HeroCopy>
-          <H1>
-            <Span highlightWidth={97} left="4px">
-              Michael Cacciano
-            </Span>
-          </H1>
-          <H2>
-            <Span>Full </Span>
-            <Span>Stack </Span>
-            <Span>Developer </Span>
-          </H2>
-          <H3>
-            <Span fontWeight={300} highlightWidth={89} left="3px">
-              Passion{' '}
-            </Span>
-            for creating{' '}
-            <Span fontWeight={300} highlightWidth={90} left="2px">
-              simplistic{' '}
-            </Span>
-            and{' '}
-            <Span fontWeight={300} highlightWidth={92} left="2px">
-              engaging{' '}
-            </Span>
-            experiences on the web
-          </H3>
-          {/* <SocialList>
-            {trail.map(({ ...styles }, i) => {
-              const { href, icon } = SOCIAL_LINKS[i]
-
-              return (
-                <SocialListItem key={i} style={{ ...styles }}>
-                  <a
-                    href={href}
-                    className={icon}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <SocialListIcon className={`fab fa-${icon} fa-2x`} />
-                  </a>
-                </SocialListItem>
-              )
-            })}
-          </SocialList> */}
-        </HeroCopy>
-      </HeroCopyWrapper>
-    </HeroWrapper>
+      <div className="hero-copy-wrapper">
+        <div className="hero-copy">
+          <h1>
+            <span class="first-letter">M</span>ichael{' '}
+            <span class="first-letter">C</span>acciano
+          </h1>
+          <h2>Full Stack Developer</h2>
+          <h3>
+            <span class="em">Passion</span> for creating{' '}
+            <span class="em">simplistic</span> and{' '}
+            <span class="em">engaging</span> experiences on the web
+          </h3>
+        </div>
+      </div>
+    </HeroSection>
   )
 }
 
 export default Hero
+
+/**
+  <SocialList>
+    {trail.map(({ ...styles }, i) => {
+      const { href, icon } = SOCIAL_LINKS[i]
+
+      return (
+        <SocialListItem key={i} style={{ ...styles }}>
+          <a
+            href={href}
+            className={icon}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SocialListIcon className={`fab fa-${icon} fa-2x`} />
+          </a>
+        </SocialListItem>
+      )
+    })}
+  </SocialList>
+*/

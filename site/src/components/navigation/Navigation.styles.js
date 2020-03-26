@@ -19,7 +19,8 @@ export const Nav = styled.nav`
     line-height: 55px;
   }
 
-  background: #0f4c75;
+  background: #1b262c;
+  /* background: rgba(15, 76, 129, 1); */
   /* background: #f4f4f4; */
 
   div {
@@ -28,32 +29,24 @@ export const Nav = styled.nav`
     width: 100%;
     height: 100%;
     max-width: 1200px;
+    /* border-bottom: 1px solid #0f4c75; */
   }
 
   .active {
-    background: rgba(0, 0, 0, 0.3) !important;
+    background: #0f4c81 !important;
+  }
+
+  * {
+    color: #f7f7f7 !important;
   }
 `
 
 export const GLink = styled(animated(Link))`
   display: flex;
   align-items: center;
-  color: #f7f7f7;
   height: 100%;
   padding: 0 1.25rem;
   font-family: 'Rubik', Arial, Helvetica, sans-serif;
-
-  &:hover {
-    background: rgba(0, 0, 0, 0.3);
-  }
-
-  &:active {
-    color: #f7f7f7;
-  }
-
-  &:visited {
-    color: #f7f7f7;
-  }
 `
 
 export const Logo = styled.h1`

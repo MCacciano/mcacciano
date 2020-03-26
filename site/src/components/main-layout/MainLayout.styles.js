@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     color: #171717;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
 
   ul {

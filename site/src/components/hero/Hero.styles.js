@@ -1,51 +1,18 @@
 import styled, { keyframes } from 'styled-components'
 // import { animated } from 'react-spring'
 
-import BackgroundImg from '../background-img/BackgroundImg'
+import BackgroundImage from 'gatsby-background-image'
 
-const growRight = keyframes`
-  from {
-    max-width: 0;
+export const HeroSection = styled(BackgroundImage)`
+  width: 100%;
+  height: 92vh;
+
+  @media screen and (min-width: 475px) {
+    height: 60vh;
   }
-
-  to {
-    max-width: 100%;
+  @media screen and (min-width: 900px) {
+    height: 70vh;
   }
-`
-
-export const HeroWrapper = styled(BackgroundImg)`
-  display: flex;
-
-  height: 80vh;
-  width: 100vw;
-  position: relative;
-  background-position: bottom right;
-
-  /* .hero-oval {
-    position: absolute;
-    left: 0;
-    clip-path: ellipse();
-    width: 100%;
-    z-index: -101;
-
-    &#oval-1 {
-      bottom: -45px;
-      height: 100px;
-      background: rgba(50, 130, 184, 0.3);
-    }
-    &#oval-2 {
-      bottom: -20px;
-      height: 100px;
-      background: rgba(50, 130, 184, 0.6);
-      transform: rotate(2deg);
-    }
-    &#oval-3 {
-      bottom: -20px;
-      height: 100px;
-      background: rgba(50, 130, 184, 0.6);
-      transform: rotate(-2deg);
-    }
-  } */
 
   .overlay {
     display: block;
@@ -56,107 +23,168 @@ export const HeroWrapper = styled(BackgroundImg)`
     width: 100%;
     height: 100%;
     z-index: -99;
-
-    &-black {
-      background: rgba(0, 0, 0, 0.4);
-    }
-
-    &-blue {
-      background: rgba(50, 130, 184, 0.5);
-
-      /* background: linear-gradient(
-        to bottom right,
-        rgba(50, 130, 184, 0.7),
-        rgba(50, 130, 184, 0.5),
-        rgba(50, 130, 184, 0.4),
-        rgba(50, 130, 184, 0.5),
-        rgba(50, 130, 184, 0.7)
-      ); */
-    }
+    background: linear-gradient(
+      to bottom right,
+      rgba(27, 38, 44, 0.9),
+      rgba(255, 163, 114, 0.1),
+      rgba(27, 38, 44, 0.6),
+      rgba(255, 163, 114, 0.1),
+      rgba(27, 38, 44, 0.9)
+    );
   }
 
   * {
-    color: #f7f7f7;
+    color: #f7f7f7 !important;
+    line-height: 1.2;
   }
-`
 
-export const HeroCopyWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-
-  @media screen and (min-width: 880px) {
+  .hero-copy-wrapper {
+    display: flex;
     justify-content: flex-start;
-  }
-`
-
-export const HeroCopy = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  align-content: center;
-  justify-items: start;
-  padding: 0 10px;
-
-  text-align: left;
-  max-width: 800px;
-
-  @media screen and (min-width: 880px) {
-    margin-left: 200px;
+    align-items: center;
+    height: 100%;
     text-align: left;
-    justify-items: start;
+
+    @media screen and (max-width: 840px) {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 660px;
+      padding: 0 10px;
+      margin-left: 10vw;
+
+      @media screen and (max-width: 840px) {
+        margin-left: 0;
+      }
+
+      h1 {
+        font-size: 2.7rem;
+        font-weight: 700;
+        font-family: 'Rubik', Arial, Helvetica, sans-serif;
+
+        /* older small screens */
+        @media screen and (min-width: 1px) and (max-width: 396px) {
+          font-size: 2.3rem;
+        }
+
+        @media screen and (min-width: 600px) {
+          font-size: 3.9rem;
+        }
+
+        @media screen and (min-width: 1000px) {
+          font-size: 4.5rem;
+        }
+      }
+      h2 {
+        font-size: 2.1rem;
+        font-weight: 500;
+        font-family: 'Rubik', Arial, Helvetica, sans-serif;
+
+        /* older small screens */
+        @media screen and (min-width: 1px) and (max-width: 375px) {
+          font-size: 1.9rem;
+        }
+
+        @media screen and (min-width: 600px) {
+          font-size: 3rem;
+        }
+
+        @media screen and (min-width: 1000px) {
+          font-size: 3.5rem;
+        }
+      }
+      h3 {
+        font-size: 1.8rem;
+        font-weight: 100;
+
+        .em {
+          font-weight: 500;
+          position: relative;
+
+          &:after {
+            content: '';
+            position: absolute;
+            width: 97%;
+            max-width: 0%;
+            height: 2px;
+            left: 2px;
+            bottom: 5px;
+            background: #ffa372;
+            animation: growRight 750ms ease-in-out 500ms forwards;
+            z-index: -1;
+
+            @keyframes growRight {
+              0% {
+                max-width: 0%;
+              }
+
+              100% {
+                max-width: 100%;
+              }
+            }
+          }
+        }
+
+        /* older small screens */
+        @media screen and (min-width: 1px) and (max-width: 375px) {
+          font-size: 1.6rem;
+        }
+
+        @media screen and (min-width: 600px) {
+          font-size: 2.1rem;
+        }
+
+        @media screen and (min-width: 1000px) {
+          font-size: 2.5rem;
+        }
+      }
+
+      /* @media screen and (max-width: 645px) {
+        h1 {
+          font-size: 1rem;
+        }
+
+        h2 {
+          font-size: 1rem;
+        }
+
+        h3 {
+          font-size: 1rem;
+        }
+      }
+
+      @media screen and (max-width: 590px) {
+        h1 {
+          font-size: 1rem;
+        }
+
+        h2 {
+          font-size: 1rem;
+        }
+
+        h3 {
+          font-size: 1rem;
+        }
+      }
+
+      @media screen and (max-width: 530px) {
+        h1 {
+          font-size: 1rem;
+        }
+
+        h2 {
+          font-size: 1rem;
+        }
+
+        h3 {
+          font-size: 1rem;
+        }
+      } */
+    }
   }
-`
-
-export const H1 = styled.h1`
-  font-size: 3.75rem;
-  font-family: 'Rubik', Arial, Helvetica, sans-serif;
-
-  @media screen and (min-width: 768px) {
-    font-size: 4.5rem;
-  }
-`
-export const H2 = styled.h2`
-  font-size: 2rem;
-  font-family: 'Rubik', Arial, Helvetica, sans-serif;
-
-  @media screen and (min-width: 768px) {
-    font-size: 3.1rem;
-  }
-`
-export const H3 = styled.h3`
-  max-width: 600px;
-  font-size: 1.7rem;
-
-  @media screen and (min-width: 768px) {
-    font-size: 2.2rem;
-  }
-`
-
-export const SocialList = styled.ul``
-
-export const SocialListItem = styled.li``
-
-export const SocialListIcon = styled.i``
-
-export const Span = styled.span`
-  /* font-size: ${({ fontSize }) => `${fontSize}rem`}; */
-  font-weight: ${({ fontWeight }) => `${fontWeight}`};
-  /* letter-spacing: 1px;
-  vertical-align: bottom;
-  position: relative;
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 60%;
-    left: ${({ left }) => (left ? `${left}` : '0')};
-    width: ${({ highlightWidth }) =>
-      highlightWidth ? `${highlightWidth}%` : '0'};
-    height: 30%;
-    background: #3282b8;
-    z-index: -1;
-    max-width: 0;
-    animation: ${growRight} ease-in 1s forwards;
-  } */
 `
