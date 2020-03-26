@@ -21,10 +21,6 @@ export const GlobalStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: #171717;
     cursor: pointer;
-
-    &:visited { color: #171717; }
-    &:active { color: #171717; }
   }
 `

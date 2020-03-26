@@ -1,11 +1,10 @@
 import React from 'react'
 
-import { useStaticQuery, graphql } from 'gatsby'
-import GImg from '../g-img/GImg'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 // import { useTrail } from 'react-spring'
 
 // styled components
-import { HeroSection, HeroBanner } from './Hero.styles'
+import { HeroSection } from './Hero.styles'
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -50,6 +49,14 @@ const Hero = () => {
             <span class="em">simplistic</span> and{' '}
             <span class="em">engaging</span> experiences on the web
           </h3>
+          <div className="ctas">
+            <Link to="/work" className="cta">
+              Work
+            </Link>
+            <Link to="/blog" className="cta">
+              Blog
+            </Link>
+          </div>
         </div>
       </div>
     </HeroSection>

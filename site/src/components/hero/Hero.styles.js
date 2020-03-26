@@ -6,12 +6,15 @@ import BackgroundImage from 'gatsby-background-image'
 export const HeroSection = styled(BackgroundImage)`
   width: 100%;
   height: 92vh;
+  line-height: 1.2;
+  color: #eeeeee;
 
   @media screen and (min-width: 475px) {
     height: 60vh;
   }
   @media screen and (min-width: 900px) {
-    height: 70vh;
+    height: 85vh;
+    /* clip-path: polygon(0 0, 0 90%, 100% 100%, 100% 0); */
   }
 
   .overlay {
@@ -23,19 +26,15 @@ export const HeroSection = styled(BackgroundImage)`
     width: 100%;
     height: 100%;
     z-index: -99;
-    background: linear-gradient(
+    background: rgba(48, 56, 65, 0.7);
+    /* background: linear-gradient(
       to bottom right,
       rgba(27, 38, 44, 0.9),
       rgba(255, 163, 114, 0.1),
       rgba(27, 38, 44, 0.6),
       rgba(255, 163, 114, 0.1),
       rgba(27, 38, 44, 0.9)
-    );
-  }
-
-  * {
-    color: #f7f7f7 !important;
-    line-height: 1.2;
+    ); */
   }
 
   .hero-copy-wrapper {
@@ -111,10 +110,10 @@ export const HeroSection = styled(BackgroundImage)`
             position: absolute;
             width: 97%;
             max-width: 0%;
-            height: 2px;
+            height: 1px;
             left: 2px;
             bottom: 5px;
-            background: #ffa372;
+            background: #be3144;
             animation: growRight 750ms ease-in-out 500ms forwards;
             z-index: -1;
 
@@ -144,47 +143,33 @@ export const HeroSection = styled(BackgroundImage)`
         }
       }
 
-      /* @media screen and (max-width: 645px) {
-        h1 {
-          font-size: 1rem;
+      .ctas {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 20px;
+        font-size: 1.5rem;
+        font-family: 'Rubik', Arial, Helvetica, sans-serif;
+        font-weight: 100;
+
+        @media screen and (max-width: 840px) {
+          justify-content: center;
         }
 
-        h2 {
-          font-size: 1rem;
-        }
+        .cta {
+          border: thin solid #be3144;
+          border-radius: 5px;
+          padding: 10px 20px;
+          color: #eeeeee;
 
-        h3 {
-          font-size: 1rem;
+          &:not(:first-child) {
+            margin-left: 15px;
+          }
+
+          &:hover {
+            background: #be3144;
+          }
         }
       }
-
-      @media screen and (max-width: 590px) {
-        h1 {
-          font-size: 1rem;
-        }
-
-        h2 {
-          font-size: 1rem;
-        }
-
-        h3 {
-          font-size: 1rem;
-        }
-      }
-
-      @media screen and (max-width: 530px) {
-        h1 {
-          font-size: 1rem;
-        }
-
-        h2 {
-          font-size: 1rem;
-        }
-
-        h3 {
-          font-size: 1rem;
-        }
-      } */
     }
   }
 `
