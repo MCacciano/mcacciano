@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Roboto:wght@100;300;400;500;700&family=Rubik:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+
+/* Write your own custom base styles here */
+
+body {
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Write your own custom component styles here */
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */
