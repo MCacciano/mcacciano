@@ -1,120 +1,67 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'gatsby';
 
-import { useChain, useTransition, config } from 'react-spring'
-
-import {
-  Nav,
-  MobileNav,
-  MobileNavItem,
-  Logo,
-  Ul,
-  Li,
-  GLink,
-  BurgerMenu,
-} from './Navigation.styles'
-
-const Navigation = () => {
-  const [isOpen, setIsOpen] = React.useState(null)
-  const [navItems] = React.useState([
+const Navigation = props => {
+  const url = typeof window !== 'undefined' ? window.location.href : '';
+  const links = [
     {
-      to: '/work',
-      text: 'Work',
+      label: 'Work',
+      href: '/work',
     },
     {
-      to: '/blog',
-      text: 'Blog',
+      label: 'Contact',
+      href: '/contact',
     },
-    {
-      to: '/about',
-      text: 'About',
-    },
-    {
-      to: '/contact',
-      text: 'Contact',
-    },
-  ])
+  ];
 
-  const sideBarRef = React.useRef()
-  const transition = useTransition(isOpen, null, {
-    from: {
-      width: '0vw',
-    },
-    enter: {
-      width: '100vw',
-    },
-    leave: {
-      width: '0vw',
-    },
-    unique: true,
-    config: config.stiff,
-    ref: sideBarRef,
-  })
-
-  const navItemsRef = React.useRef()
-  const trail = useTransition(isOpen ? navItems : [], item => item.text, {
-    from: {
-      opacity: 0,
-      transform: 'scale(0)',
-    },
-    enter: {
-      opacity: 1,
-      transform: 'scale(1)',
-    },
-    leave: {
-      opacity: 0,
-      transform: 'scale(0)',
-    },
-    ref: navItemsRef,
-    config: config.wobbly,
-    trail: 100,
-    unique: true,
-  })
-
-  useChain(
-    isOpen ? [sideBarRef, navItemsRef] : [navItemsRef, sideBarRef],
-    isOpen ? [0, 0.25] : [0, 0.6]
-  )
-  const toggleMobileNav = () => {
-    setIsOpen(!isOpen)
-  }
+  console.log('URL', url);
 
   return (
-    <Nav>
-      <div>
-        <Logo>
-          <GLink to="/">Michael Cacciano</GLink>
-        </Logo>
-        <Ul>
-          {navItems.map(({ to, text }, i) => (
-            <Li key={i}>
-              <GLink activeClassName="active" to={to}>
-                {text}
-              </GLink>
-            </Li>
-          ))}
-          <Li>
-            <BurgerMenu
-              className="fa fa-bars fa-2x"
-              onClick={toggleMobileNav}
-            />
-            {transition.map(({ item, key, props }) =>
-              item ? (
-                <MobileNav key={item} style={props}>
-                  {trail.map(({ item: { to, text }, key, props }, i) => (
-                    <MobileNavItem key={i} style={props}>
-                      <GLink activeClassName="active" to={to}>
-                        {text}
-                      </GLink>
-                    </MobileNavItem>
-                  ))}
-                </MobileNav>
-              ) : null
-            )}
-          </Li>
-        </Ul>
+    <nav className="h-16 sticky top-0 w-full flex justify-center text-primary border-b border-primary">
+      <div className="flex justify-between w-full h-full max-w-screen-lg px-2">
+        <div className="flex items-center">
+          <h2 className="text-3xl font-dancing font-bold ">
+            <Link
+              to="/"
+              className={`block h-full relative ${
+                url === 'http://localhost:8000/' ? '' : 'hover:text-secondary'
+              }`}
+            >
+              Michael Cacciano
+              <div
+                className={`bg-secondary w-full h-3 absolute opacity-50 ${
+                  url === 'http://localhost:8000/' ? '' : 'hidden'
+                }`}
+                style={{ top: '65%', zIndex: '-1' }}
+              />
+            </Link>
+          </h2>
+        </div>
+        <div className="flex-1 flex justify-end">
+          <ul className="flex font-rubik text-lg">
+            {links.map(({ href, label }) => (
+              <li className="h-full relative">
+                <div
+                  className={`bg-secondary w-full h-3 absolute opacity-50 ${
+                    url.includes(href) ? '' : 'hidden'
+                  }`}
+                  style={{ top: '50%', zIndex: '-1' }}
+                />
+                <Link
+                  href={href}
+                  className={`flex h-full items-center px-2 font-thin ${
+                    url.includes(href) ? '' : 'hover:text-secondary'
+                  }`}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </Nav>
-  )
-}
+    </nav>
+  );
+};
 
-export default Navigation
+export default Navigation;

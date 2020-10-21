@@ -1,6 +1,7 @@
-const React = require('react')
-const { HelmetProvider } = require('react-helmet-async')
+/**
+ * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
+ *
+ * See: https://www.gatsbyjs.com/docs/ssr-apis/
+ */
 
-exports.wrapRootElement = ({ element }) => {
-  return <HelmetProvider>{element}</HelmetProvider>
-}
+// You can delete this file if you're not using it

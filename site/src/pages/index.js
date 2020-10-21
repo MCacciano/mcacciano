@@ -1,15 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-import SEO from '../components/seo'
-import MainLayout from '../components/main-layout/MainLayout'
-import Hero from '../components/hero/Hero'
+import MainLayout from '../layouts/MainLayout';
+import SEO from '../components/SEO';
 
 const IndexPage = () => (
   <MainLayout>
     <SEO title="Home" />
-    <Hero />
-    <div style={{ height: '1000px', background: 'red' }}></div>
+    <h1>Michael Cacciano</h1>
   </MainLayout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
